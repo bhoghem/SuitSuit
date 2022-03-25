@@ -16,15 +16,14 @@ class MainActivity : AppCompatActivity() {
     private var flag: Int = -1
     private val TAG = MainActivity::class.java.simpleName
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        supportActionBar?.hide()
         bindViews()
+        setContentView(binding.root)
+        supportActionBar?.hide()
+
+        //val textView: TextView = findViewById(R.id.)
+        //bindViews()
         start()
         onResetClick()
 
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         setBgCompShape(-1)
         player1Choice = null
         player2Choice = null
-        binding.icRefresh.setImageResource(R.drawable.vs)
+        binding.icRefresh.setImageResource(R.drawable.refresh)
     }
 
     private fun bindViews() {
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setBgUserShape(userShape: Int) {
-        when (PlayerShape.fromInt(userShape,)) {
+        when (PlayerShape.fromInt(userShape)) {
             PlayerShape.ROCK -> {
                 binding.flChoice2.setBackgroundColor(
                     ContextCompat.getColor(
@@ -51,10 +50,11 @@ class MainActivity : AppCompatActivity() {
                         R.color.purple_200
                     )
                 )
+
                 binding.flChoice1.setBackgroundColor(0)
                 binding.flChoice3.setBackgroundColor(0)
             }
-            PlayerShape.PAPPER -> {
+            PlayerShape.PAPER -> {
                 binding.flChoice3.setBackgroundColor(
                     ContextCompat.getColor(
                         this,
@@ -83,24 +83,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setBgCompShape(compShape: Int) {
-        when (PlayerShape.fromInt(compShape,)) {
+        when (PlayerShape.fromInt(compShape)) {
             PlayerShape.ROCK -> {
                 binding.rock2.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_200))
                 binding.papper2.setBackgroundColor(0)
                 binding.scissor2.setBackgroundColor(0)
             }
-            PlayerShape.PAPPER -> {
+            PlayerShape.PAPER -> {
                 binding.papper2.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_200))
                 binding.scissor2.setBackgroundColor(0)
                 binding.rock2.setBackgroundColor(2)
             }
             PlayerShape.SCISSOR -> {
-                binding.scissor2.setBackgroundColor(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.purple_200
-                    )
-                )
+                binding.scissor2.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_200))
                 binding.rock2.setBackgroundColor(0)
                 binding.papper2.setBackgroundColor(0)
             }
@@ -127,14 +122,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun onPlayerTwoClick() {
         binding.rock2.setOnClickListener {
+            println("click batu 2...")
             player2Choice = 0
             startGame(player1Choice, player2Choice)
         }
         binding.papper2.setOnClickListener {
+            println("click kertas 2...")
             player2Choice = 1
             startGame(player1Choice, player2Choice)
         }
         binding.scissor2.setOnClickListener {
+            println("click gunting 2...")
             player2Choice = 2
             startGame(player1Choice, player2Choice)
         }
@@ -144,28 +142,33 @@ class MainActivity : AppCompatActivity() {
     private fun onPlayerOneClick() {
         var random = 0
         binding.flChoice2.setOnClickListener {
+            println("click batu 1...")
             player1Choice = 0
             setBgUserShape(0)
 
             if (playMode != 0) {
                 random = Random.nextInt(0,3)
-
+                setBgCompShape(random)
                 startGame(player1Choice, random)
             }
         }
         binding.flChoice3.setOnClickListener {
+            println("click kertas 1...")
             player1Choice = 1
             setBgUserShape(1)
             if (playMode != 0) {
                 random = Random.nextInt(0,3)
+                setBgCompShape(random)
                 startGame(player1Choice, random)
             }
         }
         binding.flChoice1.setOnClickListener {
+            println("click gunting 1...")
             player1Choice = 2
             setBgUserShape(2)
             if (playMode != 0) {
                 random = Random.nextInt(0,3)
+                setBgCompShape(random)
                 startGame(player1Choice, random)
             }
         }
