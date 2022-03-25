@@ -37,15 +37,14 @@
             android:id="@+id/fl_choice_2"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:orientation="vertical"
             android:layout_margin="8dp">
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_rock">
-
-            </ImageView>
+                android:src="@drawable/ic_rock"/>
 
 
         </FrameLayout>
@@ -129,25 +128,9 @@
         </FrameLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_pemain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Pemain Satu"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_computer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Computer"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout4" />
+
+
 
     <ImageView
         android:id="@+id/ic_refresh"
@@ -178,4 +161,20 @@
         app:layout_constraintStart_toEndOf="@+id/linearLayout3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vs" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:srcCompat="@drawable/player1"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="118dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_com" />
 </androidx.constraintlayout.widget.ConstraintLayout>
