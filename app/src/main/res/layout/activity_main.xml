@@ -37,15 +37,14 @@
             android:id="@+id/fl_choice_2"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:orientation="vertical"
             android:layout_margin="8dp">
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_rock">
-
-            </ImageView>
+                android:src="@drawable/ic_rock"/>
 
 
         </FrameLayout>
