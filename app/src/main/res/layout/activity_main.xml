@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/teal_200">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -150,7 +151,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_tittle" />
+        app:srcCompat="@drawable/ic_tittle"
+        android:background="@color/cardview_light_background"/>
 
     <ImageView
         android:id="@+id/middle"
@@ -168,7 +170,8 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:srcCompat="@drawable/player1"
-        tools:layout_editor_absoluteX="8dp" />
+        tools:layout_editor_absoluteX="8dp"
+        android:background="@color/cardview_light_background"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -176,5 +179,6 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_com" />
+        app:srcCompat="@drawable/ic_com"
+        android:background="@color/cardview_light_background"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
